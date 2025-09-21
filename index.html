@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlayZone - Sports Equipment Store</title>
+  <meta name="description" content="PlayZone - Shop premium sports equipment like footballs, cricket bats, and basketballs. Gear up for your game with quality gear.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+header { background-color: #0b3d91; color: white; position: sticky; top: 0; z-index: 1000; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.brand { font-size: 2rem; font-weight: bold; }
+
+nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; }
+nav ul li { position: relative; } /* consistent size */
+nav ul li a { 
+  color: white; 
+  padding: 0.5rem 0.8rem; 
+  display: block; 
+  font-size: 1rem; /* same size everywhere */
+}
+nav ul li a:hover { color: #ffce00; }
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #0b3d91;
+  list-style: none;
+  min-width: 150px;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+}
+.dropdown-menu li a { color: white; padding: 0.5rem 1rem; display: block; }
+.dropdown-menu li a:hover { background: #ffce00; color: black; }
+.dropdown:hover .dropdown-menu { display: block; }
+    /* Hero */
+    .hero {
+      background: url('https://source.unsplash.com/1600x800/?sports') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .hero::after { content: ''; position: absolute; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 0; }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn {
+      background-color: #ffce00; border: none; padding: 0.8rem 2rem;
+      font-size: 1rem; border-radius: 30px; cursor: pointer; color: #000; transition: 0.3s;
+    }
+    .btn:hover { background-color: #e6b800; }
+
+    /* Products grid */
+    .products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem; padding: 4rem 0;
+    }
+    .flip-card { perspective: 1000px; }
+    .flip-card-inner {
+      position: relative; width: 100%; padding-top: 100%;
+      transform-style: preserve-3d; transition: transform 0.7s;
+    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute; inset: 0; backface-visibility: hidden;
+      border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .flip-card-front { background-color: #fff; }
+    .flip-card-front img { width: 100%; height: 70%; object-fit: cover; }
+    .flip-card-front .info { padding: 1rem; }
+    .flip-card-back {
+      background-color: #0b3d91; color: white; transform: rotateY(180deg);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center; padding: 1.5rem;
+    }
+
+    footer {
+      background-color: #002855; color: #ccc; padding: 2rem 0 1rem;
+      text-align: center; font-size: 0.9rem;
+    }
+    footer nav ul { display: flex; justify-content: center; gap: 1rem; list-style: none; }
+    footer nav ul li::before { content: "\2022"; color: white; margin-right: 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="brand">PlayZone</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="">Products</a>
+            <ul class="dropdown-menu">
+              <li><a href="basketball.html">Basketball</a></li>
+              <li><a href="football.html">Football</a></li>
+              <li><a href="cricket.html">Cricket</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Gear Up. Game On.</h1>
+      <p>Top-quality sports equipment for every athlete.</p>
+      <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="container products">
+    <!-- Product 1: Football -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\football.jpg" alt="Football">
+          <div class="info">
+            <h3>Football</h3>
+            <p>Durable design with superior grip.</p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Football</h3>
+          <p>FIFA-approved, weatherproof material, ideal for all fields.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2: Cricket Bat -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket.jpg" alt="Cricket">
+          <div class="info">
+            <h3>Cricket</h3>
+            <p>Premium willow, balanced for performance.</p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Cricket</h3>
+          <p>Grade-A English Willow, shock-absorbing handle, pro finish.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3: Basketball -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\basketball.jpg" alt="Basketball">
+          <div class="info">
+            <h3>Basketball</h3>
+            <p>Indoor & outdoor grip, official size.</p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Basketball</h3>
+          <p>High-bounce core, pebble grip surface, long-lasting build.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+        <p>&copy; 2025 PlayZone Powering Every Athlete</p>
+    <p>Email: support@playzone.com | Call: +91-9742836548</p>
+  </footer>
+
+</body>
+</html>

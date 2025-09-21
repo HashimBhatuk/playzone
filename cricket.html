@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayZone | Cricket Products</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    header { background-color: #0b3d91; color: white; position: sticky; top: 0; z-index: 1000; }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .brand { font-size: 2rem; font-weight: bold; }
+
+    nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; }
+    nav ul li { position: relative; }
+    nav ul li a { 
+      color: white; 
+      padding: 0.5rem 0.8rem; 
+      display: block; 
+      font-size: 1rem;
+    }
+    nav ul li a:hover { color: #ffce00; }
+
+    /* Dropdown */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0b3d91;
+      list-style: none;
+      min-width: 150px;
+      border-radius: 6px;
+      padding: 0.5rem 0;
+    }
+    .dropdown-menu li a { color: white; padding: 0.5rem 1rem; display: block; }
+    .dropdown-menu li a:hover { background: #ffce00; color: black; }
+    .dropdown:hover .dropdown-menu { display: block; }
+
+    /* Products grid */
+    .products {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem; 
+      padding: 4rem 0;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .products h2 {
+      grid-column: 1/-1;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #0b3d91;
+    }
+
+    .flip-card { perspective: 1000px; }
+    .flip-card-inner {
+      position: relative; width: 100%; padding-top: 100%;
+      transform-style: preserve-3d; transition: transform 0.7s;
+    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute; inset: 0; backface-visibility: hidden;
+      border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .flip-card-front { background-color: #fff; }
+    .flip-card-front img { width: 100%; height: 70%; object-fit: cover; }
+    .flip-card-front .info { padding: 1rem; }
+    .flip-card-back {
+      background-color: #0b3d91; color: white; transform: rotateY(180deg);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center; padding: 1.5rem;
+    }
+
+    .btn {
+      background-color: #ffce00; border: none; padding: 0.6rem 1.5rem;
+      font-size: 1rem; border-radius: 30px; cursor: pointer; color: #000; transition: 0.3s;
+      margin-top: 1rem;
+    }
+    .btn:hover { background-color: #e6b800; }
+
+    footer {
+      background-color: #002855; color: #ccc; padding: 2rem 0 1rem;
+      text-align: center; font-size: 0.9rem;
+    }
+    footer nav ul { display: flex; justify-content: center; gap: 1rem; list-style: none; }
+    footer nav ul li::before { content: "\2022"; color: white; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="brand">PlayZone</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="">Products</a>
+            <ul class="dropdown-menu">
+              <li><a href="basketball.html">Basketball</a></li>
+              <li><a href="football.html">Football</a></li>
+              <li><a href="cricket.html">Cricket</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cricket Products -->
+  <section class="products">
+    <h2>🏏 Cricket Products</h2>
+
+    <!-- Example flip card for Cricket Bat -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\bat.jpg" alt="Bat">
+          <div class="info">
+            <h3>Bat</h3>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Bat</h3>
+          <p>Premium English willow bat for professional play.</p>
+          <p><strong>₹50,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ball -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\balls.jpg" alt="Ball">
+          <div class="info"><h3>Ball</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Ball</h3>
+          <p>Durable red leather cricket ball for matches.</p>
+          <p><strong>₹15,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gloves -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\gloves.jpg" alt="Gloves">
+          <div class="info"><h3>Gloves</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Gloves</h3>
+          <p>Comfortable gloves with strong grip and protection.</p>
+          <p><strong>₹10,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Pads -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\pads.jpg" alt="Pads">
+          <div class="info"><h3>Pads</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Pads</h3>
+          <p>Comfortable pads with best quality.</p>
+          <p><strong>₹15,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Helmet -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\helmet.jpg" alt="Helmet">
+          <div class="info"><h3>Helmet</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Helmet</h3>
+          <p>Strong protective helmet with ventilation design.</p>
+          <p><strong>₹15,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stumps -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\stumps.jpg" alt="Stumps">
+          <div class="info"><h3>Stumps</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Stumps</h3>
+          <p>Durable wooden stumps.</p>
+          <p><strong>₹5,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+  
+ <!-- Kit Bag -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\kitbag.jpg" alt="Kit Bag">
+          <div class="info"><h3>Kit Bag</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>Kit Bag</h3>
+          <p>Spacious kit bag for all your cricket equipment.</p>
+          <p><strong>₹15,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- L Guard -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images\cricket\Lguard.jpg" alt="L Guard">
+          <div class="info"><h3>L Guard</h3></div>
+        </div>
+        <div class="flip-card-back">
+          <h3>L Guard</h3>
+          <p>Always ready, always protected.</p>
+          <p><strong>₹10,000</strong></p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Continue same pattern for Stumps, Jersey etc. -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+        <p>&copy; 2025 PlayZone Powering Every Athlete</p>
+    <p>Email: support@playzone.com | Call: +91-9742836548</p>
+  </footer>
+
+</body>
+</html>

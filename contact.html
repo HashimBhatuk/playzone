@@ -1,0 +1,117 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayZone - Contact Us</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.5; }
+    a { text-decoration: none; color: inherit; }
+    /* Navbar */
+header { background-color: #0b3d91; color: white; position: sticky; top: 0; z-index: 1000; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.brand { font-size: 2rem; font-weight: bold; }
+
+nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; }
+nav ul li { position: relative; } /* consistent size */
+nav ul li a { 
+  color: white; 
+  padding: 0.5rem 0.8rem; 
+  display: block; 
+  font-size: 1rem; /* same size everywhere */
+}
+nav ul li a:hover { color: #ffce00; }
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #0b3d91;
+  list-style: none;
+  min-width: 150px;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+}
+.dropdown-menu li a { color: white; padding: 0.5rem 1rem; display: block; }
+.dropdown-menu li a:hover { background: #ffce00; color: black; }
+.dropdown:hover .dropdown-menu { display: block; }
+    .contact-section { padding: 4rem 0; background-color: #f4f4f4; }
+    .contact-section h2 { text-align: center; font-size: 2rem; color: #0b3d91; margin-bottom: 2rem; }
+    .contact-form { max-width: 600px; margin: auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .contact-form .form-group { margin-bottom: 1.2rem; }
+    .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #333; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #0b3d91; box-shadow: 0 0 5px rgba(11, 61, 145, 0.3); }
+    .btn { background-color: #ffce00; border: none; padding: 0.8rem 2rem; font-size: 1rem; border-radius: 30px; cursor: pointer; color: #000; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background-color: #e6b800; }
+    footer { background-color: #002855; color: #ccc; padding: 2rem 0 1rem; text-align: center; font-size: 0.9rem; }
+    footer nav ul { display: flex; justify-content: center; gap: 1rem; list-style: none; }
+    footer nav ul li { display: flex; align-items: center; }
+    footer nav ul li::before { content: "\2022"; color: white; font-size: 1.2rem; margin-right: 8px; line-height: 1; }
+    @media (max-width: 768px) { nav ul { flex-direction: column; gap: 0.5rem; } }
+  </style>
+</head>
+<body>
+
+   <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="brand">PlayZone</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="">Products</a>
+            <ul class="dropdown-menu">
+              <li><a href="basketball.html">Basketball</a></li>
+              <li><a href="football.html">Football</a></li>
+              <li><a href="cricket.html">Cricket</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="contact.php" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required="">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required="">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required="">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required=""></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+        <p>&copy; 2025 PlayZone Powering Every Athlete</p>
+    <p>Email: support@playzone.com | Call: +91-9742836548</p>
+  </footer>
+
+</body>
+</html>
